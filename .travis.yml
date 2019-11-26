@@ -2,8 +2,10 @@ sudo: required
 services:
   - docker
 
-script:
+install:
   - docker build -t dolibarr .
+
+script:
   - docker run -it -p 80:80 dolibarr
 
 after_script:
