@@ -1,0 +1,12 @@
+language: ruby
+
+services:
+  - docker
+
+before_install:
+  - docker build -t dolibarr .
+  - docker run -it -p 80:80 dolibarr
+  - docker ps -a
+
+script:
+  - bundle exec rake test
