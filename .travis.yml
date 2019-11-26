@@ -8,5 +8,7 @@ before_install:
   - docker run -it -p 80:80 dolibarr
   - docker ps -a
 
-    #script:
-    #- bundle exec rake test
+script:
+  - docker-compose build
+  - docker-compose run test
+    
